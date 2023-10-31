@@ -34,12 +34,12 @@ func main() {
 	flag.StringVar(&options.TargetFile, "targets", "", "file containing list of targets to brute force")
 	flag.StringVar(&options.UsernameFile, "u", "", "file containing username list")
 	flag.StringVar(&options.PasswordsFile, "p", "", "file containing password list")
-	flag.IntVar(&options.Threads, "t", 1, "amount of threads")
+	flag.IntVar(&options.Threads, "t", 1, "amount of hosts to target at once")
 	flag.StringVar(&options.Protocol, "protocol", "", "use a specific protocol")
 	flag.BoolVar(&options.AutoDetect, "auto", true, "auto detect protocols (limited support)")
 	flag.StringVar(&options.Outfile, "o", "", "write valid credentials to a file")
-	flag.StringVar(&options.ParentHost, "parent", "", "host to post valid credentials in json format")
-	flag.StringVar(&options.HeaderString, "headers", "", "headers to add to post request format: 'key:value,key:value'")
+	flag.StringVar(&options.ParentHost, "parent", "", "post valid credentials to a remote host in json format")
+	flag.StringVar(&options.HeaderString, "headers", "", "headers to add to post request. format: 'key:value,key:value'")
 	flag.Parse()
 
 	if len(os.Args) == 1 {
